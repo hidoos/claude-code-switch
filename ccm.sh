@@ -903,8 +903,8 @@ switch_to_minimax() {
     clean_env
     if is_effectively_set "$MINIMAX_API_KEY"; then
         # 官方 MiniMax 的 Anthropic 兼容端点
-        export ANTHROPIC_BASE_URL="https://api.minimax.io/anthropic"
-        export ANTHROPIC_API_URL="https://api.minimax.io/anthropic"
+        export ANTHROPIC_BASE_URL="https://api.minimaxi.com/anthropic"
+        export ANTHROPIC_API_URL="https://api.minimaxi.com/anthropic"
         export ANTHROPIC_AUTH_TOKEN="$MINIMAX_API_KEY"
         export ANTHROPIC_API_KEY="$MINIMAX_API_KEY"
         export ANTHROPIC_MODEL="minimax/minimax-m2"
@@ -1511,8 +1511,8 @@ emit_env_exports() {
                 echo "$prelude"
                 echo "export API_TIMEOUT_MS='600000'"
                 echo "export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC='1'"
-                echo "export ANTHROPIC_BASE_URL='https://api.minimax.io/anthropic'"
-                echo "export ANTHROPIC_API_URL='https://api.minimax.io/anthropic'"
+                echo "export ANTHROPIC_BASE_URL='https://api.minimaxi.com/anthropic'"
+                echo "export ANTHROPIC_API_URL='https://api.minimaxi.com/anthropic'"
                 echo "if [ -z \"\${MINIMAX_API_KEY}\" ] && [ -f \"\$HOME/.ccm_config\" ]; then . \"\$HOME/.ccm_config\" >/dev/null 2>&1; fi"
                 echo "export ANTHROPIC_AUTH_TOKEN=\"\${MINIMAX_API_KEY}\""
                 local mm_model="${MINIMAX_MODEL:-minimax/minimax-m2}"
